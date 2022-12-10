@@ -100,8 +100,41 @@ public class UserDao {
         }
         return users;
     } 
+    
+    public static User searchUserByEmail(String email){
+        
+        User u = null;
+        
+        try {
+              Driver driver = new Driver();
+            DriverManager.registerDriver(driver);
+            
+            Connection c = DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWORD);
+            
+            PreparedStatement stmt = c.prepareStatement(SELECT_BY_EMAIL);       
+        
+            stmt.setString(1, email);
+            
+            ResultSet rs =stmt.executeQuery();
+            
+            if (rs.next()){
+                
+                int id = rs.getInt("id");
+                String password = rs.getString("password");
+                
+                u = new User();
+                u.setId(id);
+                u.getEmail();
+                u.setPassword(password);
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return u;
+    }
 
-public static boolean insertUser(User u){
+    public static boolean insertUser(User u){
         boolean success = false;
         try {
             Driver driver = new Driver();
@@ -162,6 +195,7 @@ public static boolean insertUser(User u){
     
     
 } 
+    
     public static boolean deleteUser(User u){
 
      boolean success = false;
