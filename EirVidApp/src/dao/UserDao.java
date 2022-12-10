@@ -5,6 +5,9 @@ import com.mysql.cj.jdbc.Driver;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Scanner;
 import model.User;
 
@@ -49,6 +52,54 @@ public class UserDao {
         
     //CRUD methods - Create Read Update Delete
 }
+    
+    public static ArrayList<User> searchUsers(){
+        
+        ArrayList<User> users = new ArrayList();
+        
+        //Java DataBase Connection (JDBC)
+        try{
+            Driver driver = new Driver();
+            DriverManager.registerDriver(driver);
+            
+            Connection c = DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWORD);
+            
+            PreparedStatement stmt = c.prepareStatement(SELECT_SQL);
+            
+            ResultSet rs = stmt.executeQuery();
+            
+            while (rs.next()){
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String surname = rs.getString("surname");
+                int yearbirth = rs.getInt("yearbirth");
+                int cardNumber= rs.getInt("cardnumber");
+                String email= rs.getString("email");
+                String password= rs.getString("password");
+                
+                User u = new User();
+                u.setId(id);
+                u.setName(name);
+                u.setSurname(surname);
+                u.setYearOfBirth(yearbirth);
+                u.setCardNumber(cardNumber);
+                u.setEmail(email);
+                u.setPassword(password);
+                
+                users.add(u);
+                
+                
+              
+            }
+            
+            stmt.close();
+            c.close();
+            
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return users;
+    } 
 
 public static boolean insertUser(User u){
         boolean success = false;
