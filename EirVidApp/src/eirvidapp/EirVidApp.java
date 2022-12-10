@@ -2,6 +2,7 @@ package eirvidapp;
 
 
 
+import dao.UserDao;
 import model.User;
 import java.util.ArrayList;
 import java.util.Scanner;
