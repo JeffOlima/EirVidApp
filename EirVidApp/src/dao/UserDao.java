@@ -161,5 +161,32 @@ public static boolean insertUser(User u){
         return success;
     
     
-}  
+} 
+    public static boolean deleteUser(User u){
+
+     boolean success = false;
+        try {
+            
+              Driver driver = new Driver();
+            DriverManager.registerDriver(driver);
+            
+            Connection c = DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWORD);
+            
+            PreparedStatement stmt = c.prepareStatement(DELETE_SQL);
+            
+            stmt.setInt (1, u.getId());
+            
+            int rowsAffected = stmt.executeUpdate();
+            
+            if (rowsAffected > 0){
+            success = true;
+            }else{
+           success = false;
+        }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return success;
+}
 }
