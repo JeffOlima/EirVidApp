@@ -79,7 +79,7 @@ public class EirVidApp {
                         successLogin = true;
                     }
 // 
-                    if (!successLogin){
+                    if (successLogin){
                         System.out.println("-----> YOU LOGGED IN");
                         userLogged = u;
                         homePage();
@@ -112,9 +112,7 @@ public class EirVidApp {
         System.out.println("[1] ");
         System.out.println("[2] ");
         System.out.println("[3] ");
-        System.out.println("[4] ");
-        System.out.println("[5] ");
-        System.out.println("[6] Logout");
+        System.out.println("[4] Logout");
       
         String option = scanner.nextLine();
         
@@ -129,18 +127,12 @@ public class EirVidApp {
                 break;
             }
              case "4":{
-                break;
-            }  
-             case "5":{
-                break;
-            }
-             case "6":{
                  System.out.println("Logging out");
                  running = false;
                  userLogged = null;
                 break;
-            } 
-            
+            }  
+           
         }
         }
     }

@@ -18,11 +18,11 @@ public class UserDao {
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD= "root"; 
     
-    private static final String SELECT_SQL = "SELECT * FROM starmovies.user";
-    private static final String SELECT_BY_EMAIL = "SELECT * FROM starmovies.user WHERE email = ?";
-    private static final String INSERT_SQL = "INSERT INTO starmovies.user (name, surname, yearbirth, cardnumber, email, password)VALUES (?, ?, ?, ?, ?, ?)";
-    private static final String UPDATE_SQL = "UPDATE starmovies.user  SET name = ?, surname = ?, yearbirth = ?, cardnumber = ?, email = ?, password = ?  WHERE id = ?";    
-    private static final String DELETE_SQL = "DELETE FROM starmovies.user WHERE id = ?";
+    private static final String SELECT_SQL = "SELECT * FROM eirvidapp.user";
+    private static final String SELECT_BY_EMAIL = "SELECT * FROM eirvidapp.user WHERE email = ?";
+    private static final String INSERT_SQL = "INSERT INTO eirvidapp.user (name, surname, yearbirth, cardnumber, email, password)VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String UPDATE_SQL = "UPDATE eirvidapp.user  SET name = ?, surname = ?, yearbirth = ?, cardnumber = ?, email = ?, password = ?  WHERE id = ?";    
+    private static final String DELETE_SQL = "DELETE FROM eirvidapp.user WHERE id = ?";
     
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -106,7 +106,7 @@ public class UserDao {
         User u = null;
         
         try {
-              Driver driver = new Driver();
+            Driver driver = new Driver();
             DriverManager.registerDriver(driver);
             
             Connection c = DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWORD);
@@ -124,7 +124,7 @@ public class UserDao {
                 
                 u = new User();
                 u.setId(id);
-                u.getEmail();
+                u.setEmail(email);
                 u.setPassword(password);
             }
             
