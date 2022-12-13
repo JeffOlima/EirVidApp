@@ -1,5 +1,6 @@
 import Movie.Movie;
 import Movie.MovieList;
+import User.User;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,6 +10,8 @@ public class Main {
         System.out.println("Start");
         MovieList movieList = new MovieList();
         List<Movie> movies = movieList.createMovieList();
-        System.out.println(movies.get(0));
+        movies.get(0).getMovie();
+        User user = new User();
+        user.findMovie("Heat").getMovie();
     }
 }

@@ -4,11 +4,14 @@
  */
 package User;
 
+import Functionality.FindMovie;
+import Movie.Movie;
+
 /**
  *
  * @author olive
  */
-public class User {
+public class User  implements User_Functionality{
     
     private int id;
     private String name;
@@ -18,8 +21,15 @@ public class User {
     private String email;
     private String password;
 
-    
-    
+    @Override
+    public Movie findMovie(String movieName){
+        FindMovie findTheMovie = new FindMovie();
+        if(findTheMovie == null) {
+            System.out.println("Movie not found");
+        }
+        return findTheMovie.findMovie(movieName);
+    }
+
      public int getId() {
         return id;
     }

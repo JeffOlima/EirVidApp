@@ -24,7 +24,6 @@ public class FindMovie {
 
             }
         }
-        System.out.println("Sorry, couldn't find the movie: " + movieName);
         return null;
     }
 }

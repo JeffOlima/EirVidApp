@@ -32,7 +32,7 @@ public class Movie {
         this.vote_count = vote_count;
         this.price = price;
     }
-    public void showMovie(){
+    public void getMovie(){
         System.out.println("original_language: " + getOriginal_language());
         System.out.println("original_title: " + getOriginal_title() );
         System.out.println("overview: " + getOverview());
