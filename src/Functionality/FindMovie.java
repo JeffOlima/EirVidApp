@@ -9,16 +9,20 @@ import java.util.List;
 public class FindMovie {
     private List<Movie> movies;
 
-    public Movie findMovie(String movieName) throws IOException {
+    public Movie findMovie(String movieName) {
 
         MovieList movieList = new MovieList();
-        movies = movieList.createMovieList();
+        try {
+            movies = movieList.createMovieList();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         int i;
-        for(i = 0; i < movies.size(); i++) {
-            if(movies.get(i).getOriginal_title().matches(movieName)){
+        for (i = 0; i < movies.size(); i++) {
+            if (movies.get(i).getOriginal_title().matches(movieName)) {
                 return movies.get(i);
-            }
 
+            }
         }
         System.out.println("Sorry, couldn't find the movie: " + movieName);
         return null;

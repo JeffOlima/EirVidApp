@@ -1,7 +1,7 @@
-package eirvidapp;
+/*package eirvidapp;
 
 import dao.UserDao;
-import model.User;
+import User.User;
 
 public class Login {
     public boolean Log_IN(String email, String password){
@@ -24,3 +24,4 @@ public class Login {
     }
 
 }
+*/
