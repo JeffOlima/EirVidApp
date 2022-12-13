@@ -22,11 +22,8 @@ public class EirVidApp {
         while (running){
             
             //menu + user input 
-            System.out.println("===== LOGIN PAGE =====");
-            System.out.println("[1] REGISTER A NEW USER");
-            System.out.println("[2] LOGIN");
-            System.out.println("[3] QUIT");
-            System.out.println("SELECT AN OPTION");
+           Menu menu = new Menu();
+           menu.OutputFirstPart();
             String option = scanner.nextLine();
             
             //Process the user input
@@ -65,26 +62,18 @@ public class EirVidApp {
                     break;
                 }
                 case "2":{
+
                     System.out.println("===== LOGIN =====");
                     System.out.println("Type the email");
                     String email = scanner.nextLine();
                     System.out.println("Type the password");
                     String password = scanner.nextLine();
                     
-                    User u = UserDao.searchUserByEmail(email);
-                    
-                    boolean successLogin = false;
-                    
-                    if (u != null && u.getPassword().equals(password)){
-                        successLogin = true;
-                    }
-// 
-                    if (successLogin){
-                        System.out.println("-----> YOU LOGGED IN");
-                        userLogged = u;
+                    Login login = new Login();
+                    login.Log_IN(email, password);
+                    if(login.Log_IN(email, password)){
+                       // userLogged = u;
                         homePage();
-                    } else{
-                        System.out.println("-----> Email/password incorrect");
                     }
                     
                     break;
