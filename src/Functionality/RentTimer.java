@@ -1,35 +1,37 @@
 package Functionality;
 
+import Movie.Movie;
+
+import javax.swing.text.html.FormSubmitEvent;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class RentTimer {
     boolean rentOver;
 
-    public boolean setTheTimer(int rentPeriod) {
-        Timer timer = new Timer();
+    public void removeAfterNtime(List<Movie> userRentedMovies, Movie movie, int rentPeriod) {
 
-        TimerTask countTime = new TimerTask() {
-            int seconds = rentPeriod;
-            @Override
-            public void run() {
-                if(seconds >= 0){
-                    rentOver = false;
-                    System.out.println(seconds);
-                    seconds--;
-                }else{
-                    rentOver = true;
-                    System.out.println("movie rent is over");
-                    timer.cancel();
-                }
-            }
-        };
+        Rent rent = new Rent();
 
-        Calendar date = Calendar.getInstance();
-        //  date.setTime();
-        //date.se
-        timer.scheduleAtFixedRate(countTime, date.getTime(), rentPeriod * 1000);
-        return rentOver;
+        System.out.println(
+                "Current time : "
+                        + Calendar.getInstance().getTime());
+
+        // creating a ScheduledExecutorService object
+        ScheduledExecutorService scheduler
+                = Executors.newScheduledThreadPool(1);
+        //removes the movie after 5 seconds
+        Runnable task = () -> rent.removeRentedMovie(userRentedMovies,movie);
+
+        //run this task after 5 seconds
+        scheduler.schedule(task, rentPeriod, TimeUnit.SECONDS);
+
+        scheduler.shutdown();
+
     }
 }
