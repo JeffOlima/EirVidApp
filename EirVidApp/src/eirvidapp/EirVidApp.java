@@ -62,12 +62,11 @@ public class EirVidApp {
                     break;
                 }
                 case "2":{
+                    String email = null;
+                    String password = null;
 
-                    System.out.println("===== LOGIN =====");
-                    System.out.println("Type the email");
-                    String email = scanner.nextLine();
-                    System.out.println("Type the password");
-                    String password = scanner.nextLine();
+                    Validation EmailAndPasswordValidation = new Validation();
+                    Validation.EmailAndPasswordValidation();
                     
                     Login login = new Login();
                     login.Log_IN(email, password);
@@ -75,7 +74,6 @@ public class EirVidApp {
                        // userLogged = u;
                         homePage();
                     }
-                    
                     break;
                 }
                 case "3":{
