@@ -34,7 +34,9 @@ public class Data_Mapper {
                 title,
                 vote_average,
                 vote_count,
-                price
+                price,
+                0,
+                null
         );
     }
 }

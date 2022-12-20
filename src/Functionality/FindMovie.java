@@ -7,8 +7,28 @@ import java.io.IOException;
 import java.util.List;
 
 public class FindMovie {
-    private List<Movie> movies;
 
+    private int movieIndex;
+
+
+    public Movie findMovie(String movieName, List<Movie> movies) {
+
+        for (Movie movie : movies) {
+            if (movie.getOriginal_title().equals(movieName)) {
+                return  movie;
+
+            }
+        }
+        return null;
+    }
+    public int getMovieIndex() {
+        return movieIndex;
+    }
+
+    public void setMovieIndex(int movieIndex) {
+        this.movieIndex = movieIndex;
+    }
+    /*
     public Movie findMovie(String movieName) {
 
         MovieList movieList = new MovieList();
@@ -25,5 +45,5 @@ public class FindMovie {
             }
         }
         return null;
-    }
+    }*/
 }

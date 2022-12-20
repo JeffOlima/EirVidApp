@@ -5,6 +5,6 @@ import Movie.Movie;
 import java.util.List;
 
 public interface User_Functionality {
-    public Movie findMovie(String movieName);
-    public void rentMovie(String movieName, int rentPeriod);
+    public Movie findMovie(List<Movie> movieList);
+    public void rentMovie(List<Movie> moviesLibrary);
 }

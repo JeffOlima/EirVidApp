@@ -15,18 +15,16 @@ public class RentTimer {
     boolean rentOver;
 
     public void removeAfterNtime(List<Movie> userRentedMovies, Movie movie, int rentPeriod) {
-
-        Rent rent = new Rent();
+        Remove remove = new Remove();
 
         System.out.println(
-                "Current time : "
-                        + Calendar.getInstance().getTime());
+                "Current time : " + Calendar.getInstance().getTime());
 
         // creating a ScheduledExecutorService object
         ScheduledExecutorService scheduler
                 = Executors.newScheduledThreadPool(1);
         //removes the movie after 5 seconds
-        Runnable task = () -> rent.removeRentedMovie(userRentedMovies,movie);
+        Runnable task = () -> remove.removeRentedMovie(userRentedMovies,movie);
 
         //run this task after 5 seconds
         scheduler.schedule(task, rentPeriod, TimeUnit.SECONDS);

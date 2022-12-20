@@ -11,18 +11,13 @@ public class Main {
     public static void main(String[] args) throws IOException {
         System.out.println("Start");
         MovieList movieList = new MovieList();
-        List<Movie> movies = movieList.createMovieList();
-       // movies.get(0).getMovie();
-       // User user = new User();
-      //  user.findMovie("Heat").getMovie();
+        FindMovie f = new FindMovie();
         RegularUser user = new RegularUser();
-        user.rentMovie("Heat", 15);
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Choose the movie : ");
-        String movieName = sc.nextLine();
-        System.out.println("Choose the rent period");
-        int myChoice = sc.nextInt();
-        user.rentMovie(movieName, myChoice);
+       // System.out.println(f.findMovie("Heat", movieList.getMovies()).getOverview());
+     //   user.findMovie(movieList.getMovies());
+        user.rentMovie(movieList.getMovies());
+
+
 
     //    user.rentMovie("Casino", 5);
        // user.rentMovie("Nixon", 5);

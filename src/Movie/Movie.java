@@ -1,5 +1,7 @@
 package Movie;
 
+import java.time.Instant;
+
 /**
  *
  * @author Bekezhan Abdykarimov
@@ -19,7 +21,25 @@ public class Movie {
     private double vote_count;
     private double price;
 
-    public Movie(String original_language, String original_title, String overview, double popularity, String release_date, double runtime, String tagline, String title, double vote_average, double vote_count, double price) {
+    private int rentCount;
+    private Instant lastRentedTime;
+
+    public Movie(
+            String original_language,
+            String original_title,
+            String overview,
+            double popularity,
+            String release_date,
+            double runtime,
+            String tagline,
+            String title,
+            double vote_average,
+            double vote_count,
+            double price,
+            int rentCount,
+            Instant lastRentedTime
+    )
+    {
         this.original_language = original_language;
         this.original_title = original_title;
         this.overview = overview;
@@ -31,6 +51,9 @@ public class Movie {
         this.vote_average = vote_average;
         this.vote_count = vote_count;
         this.price = price;
+        this.rentCount = rentCount;
+        this.lastRentedTime = lastRentedTime;
+
     }
     public void getMovie(){
         System.out.println("original_language: " + getOriginal_language());
@@ -46,6 +69,19 @@ public class Movie {
         System.out.println("price: " + getPrice());
 
     }
+
+    public void rented() {
+        // Increment the rent count and update the last rented time
+        rentCount++;
+        lastRentedTime = Instant.now();
+    }
+
+   /* public int getRentalsInLast5Minutes(long currentTime) {
+        if (currentTime - lastRentalTime < 300000) {
+            return rentals;
+        }
+        return 0;
+    }*/
 
     public String getOriginal_language() {
         return original_language;
@@ -89,6 +125,22 @@ public class Movie {
 
     public double getPrice() {
         return price;
+    }
+
+    public int getRentCount() {
+        return rentCount;
+    }
+
+    public void setRentCount(int rentCount) {
+        this.rentCount = rentCount;
+    }
+
+    public Instant getLastRentedTime() {
+        return lastRentedTime;
+    }
+
+    public void setLastRentedTime(Instant lastRentedTime) {
+        this.lastRentedTime = lastRentedTime;
     }
 }
 
