@@ -1,7 +1,7 @@
 package eirvidapp;
 
 public class Menu {
-    public static void OutputFirstPart() {
+    public static void OutputMenu() {
         //menu + user input
         System.out.println("===== LOGIN PAGE =====");
         System.out.println("[1] REGISTER A NEW USER");

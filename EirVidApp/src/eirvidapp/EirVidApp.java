@@ -23,56 +23,94 @@ public class EirVidApp {
             
             //menu + user input 
            Menu menu = new Menu();
-           menu.OutputFirstPart();
+           menu.OutputMenu();
             String option = scanner.nextLine();
             
             //Process the user input
             switch (option){
                 case "1": {
-                    System.out.println("===== USER REGISTRATION =====");
-                    System.out.println("Type the name");
-                    String name = scanner.nextLine();
-                    System.out.println("Type the surname");
-                    String surname = scanner.nextLine();
-                    System.out.println("Type Year of birth");
-                    int yearofbirth = scanner.nextInt();
-                    System.out.println("Type Card number");
-                    int cardNumber = scanner.nextInt();
-                    System.out.println("Type the email");
-                    String email = scanner.next();
-                    System.out.println("Type the password");
-                    String password = scanner.next();
-                
-                     User u = new User();
-                
-                    u.setName(name);
-                    u.setSurname(surname);
-                    u.setYearOfBirth(yearofbirth);
-                    u.setCardNumber(cardNumber);
-                    u.setEmail(email);
-                    u.setPassword(password);
-        
-                    boolean registered = UserDao.insertUser(u);
+                 String name, surname, yearofbirth, cardNumber, email, password;
                     
-                    if (registered){
-                        System.out.println("-----> USER SUCCESSFULY REGITERED");
-                    }else{
-                    System.out.println("-----> ERROR, TRY AGAIN");
+                     do {
+                     System.out.println("Please enter your name (Only letters and no space):");
+                     name = scanner.nextLine();
+                     if (name.matches("[a-zA-Z]+")) {
+                      break;
+                     } else {
+                     System.out.println("Name is invalid. Please enter a valid name (Only letters and no spaces).");
+                     }
+                     } while (true);
+                      
+                    do {
+                    System.out.println("Please enter your surname (Only letters and no space):");
+                    surname = scanner.nextLine();
+                    if (surname.matches("[a-zA-Z]+")) {
+                    break;
+                    } else {
+                    System.out.println("Surname is invalid. Please enter a valid surname (Only letters and no spaces).");
                     }
+                    } while (true);
+
+                    do {
+                   System.out.println("Please enter your date of birth (DD/MM/YYYY):");
+                   yearofbirth = scanner.nextLine();
+                    if (yearofbirth.matches("((0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4})")) {
+                   break;
+                   } else {
+                   System.out.println("Date of birth is invalid. Please enter a valid date of birth (DD/MM/YYYY).");
+                   }
+                   } while (true);
+
+                    do {
+                    System.out.println("Please enter your card number (Must be 16 numbers):");
+                    cardNumber = scanner.nextLine();
+                    if (cardNumber.matches("[0-9]{16}")) {
+                    break;
+                    } else {
+                   System.out.println("Card number is invalid. Please enter a valid card number (Must be 16 numbers).");
+                   }
+                   } while (true);
+
+                   do {
+                   System.out.println("Please enter your email:");
+                   email = scanner.nextLine();
+                   if (email.matches("[a-zA-Z0-9_.]+@[a-zA-Z]+\\.[a-zA-Z]+")) {
+                   break;
+                   } else {
+                   System.out.println("Email is invalid. Please enter a valid email.");
+                   }
+                   } while (true);
+
+                   do {
+                   System.out.println("Please enter your password (Must be more than 8 characters):");
+                   password = scanner.nextLine();
+                   if (password.matches(".{8,}")) {
+                   break;
+                   } else {
+                   System.out.println("Password is invalid. Please enter a valid password (Must be more than 8 characters).");
+                   }
+                   } while (true);
+                   
+                    Registration registration = new Registration();
+                    registration.Reg(name, surname, yearofbirth, cardNumber, email, password);
+                   
                     break;
                 }
                 case "2":{
-                    String email = null;
-                    String password = null;
+                      Scanner input = new Scanner(System.in);
+ 
+                    System.out.println("===== LOGIN =====");
+                    System.out.println("Type the email");
+                    String email = scanner.nextLine();
+                    System.out.println("Type the password");
+                    String password = scanner.nextLine();
 
-                    Validation EmailAndPasswordValidation = new Validation();
-                    Validation.EmailAndPasswordValidation();
-                    
+
                     Login login = new Login();
                     login.Log_IN(email, password);
                     if(login.Log_IN(email, password)){
                        // userLogged = u;
-                        homePage();
+                        HomePage();
                     }
                     break;
                 }
@@ -89,17 +127,13 @@ public class EirVidApp {
         System.out.println("System shutted off");
     }
     
-    public static void homePage(){
+    public static void HomePage(){
         
         boolean running = true;
         while(running){
-            //options from the main menu 
-        System.out.println("===== HOME PAGE =====");  
-        System.out.println("SELECT AN OPTION");
-        System.out.println("[1] ");
-        System.out.println("[2] ");
-        System.out.println("[3] ");
-        System.out.println("[4] Logout");
+         //options from the main menu 
+            OutputHomePage homepage = new OutputHomePage();
+            homepage.homePage();
       
         String option = scanner.nextLine();
         

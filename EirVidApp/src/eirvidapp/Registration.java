@@ -6,7 +6,7 @@ import model.User;
 
 public class Registration {
     
-    public User Reg(String name, String surname, int yearofbirth, int cardNumber, String email, String password){
+    public User Reg(String name, String surname, String yearofbirth, String cardNumber, String email, String password){
      
                 
       User u = new User();
