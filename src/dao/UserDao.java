@@ -29,9 +29,9 @@ public class UserDao {
         System.out.println("Type the surname");
         String surname = scanner.nextLine();
         System.out.println("Type Year of birth");
-        int yearbirth = scanner.nextInt();
+        String yearbirth = scanner.nextLine();
         System.out.println("Type Card number");
-        int cardNumber = scanner.nextInt();
+        String cardNumber = scanner.nextLine();
         System.out.println("Type the email");
         String email = scanner.next();
         System.out.println("Type the password");
@@ -69,8 +69,8 @@ public class UserDao {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
                 String surname = rs.getString("surname");
-                int yearbirth = rs.getInt("yearbirth");
-                int cardNumber= rs.getInt("cardnumber");
+                String yearbirth = rs.getString("yearbirth");
+                String cardNumber= rs.getString("cardnumber");
                 String email= rs.getString("email");
                 String password= rs.getString("password");
                 
@@ -143,8 +143,8 @@ public class UserDao {
         
             stmt.setString(1,u.getName());
             stmt.setString(2,u.getSurname() );
-            stmt.setInt(3,u.getYearOfBirth() );
-            stmt.setInt(4,u.getCardNumber() );
+            stmt.setString(3,u.getYearOfBirth() );
+            stmt.setString(4,u.getCardNumber() );
             stmt.setString(5,u.getEmail());
             stmt.setString(6,u.getPassword());
         
@@ -174,8 +174,8 @@ public class UserDao {
         
             stmt.setString(1,u.getName() );
             stmt.setString(2,u.getSurname() );
-            stmt.setInt(3,u.getYearOfBirth());
-            stmt.setInt(4,u.getCardNumber() );
+            stmt.setString(3,u.getYearOfBirth());
+            stmt.setString(4,u.getCardNumber() );
             stmt.setString(5,u.getEmail() );
             stmt.setString(6,u.getPassword());
             stmt.setInt(7,u.getId());

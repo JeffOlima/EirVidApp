@@ -16,8 +16,8 @@ public abstract class User implements User_Functionality{
     private int id;
     private String name;
     private String surname;
-    private int YearOfBirth;
-    private int cardNumber;
+    private String YearOfBirth;
+    private String cardNumber;
     private String email;
     private String password;
 
@@ -55,19 +55,19 @@ public abstract class User implements User_Functionality{
         this.surname = surname;
     }
 
-    public int getYearOfBirth() {
+    public String getYearOfBirth() {
         return YearOfBirth;
     }
 
-    public void setYearOfBirth(int YearOfBirth) {
+    public void setYearOfBirth(String YearOfBirth) {
         this.YearOfBirth = YearOfBirth;
     }
 
-    public int getCardNumber() {
+    public String getCardNumber() {
         return cardNumber;
     }
 
-    public void setCardNumber(int cardNumber) {
+    public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
     }
 
