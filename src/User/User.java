@@ -22,7 +22,7 @@ public abstract class User implements User_Functionality{
         this.id = id;
         this.name = name;
         this.surname = surname;
-        YearOfBirth = yearOfBirth;
+        this.YearOfBirth = yearOfBirth;
         this.cardNumber = cardNumber;
         this.email = email;
         this.password = password;

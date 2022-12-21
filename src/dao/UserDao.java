@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-/*
+
 package dao;
 
 import User.RegularUser;
-import com.mysql.cj.jdbc.Driver;
+import com.mysql.jdbc.Driver;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,7 +17,7 @@ public class UserDao {
     
     private static final String SELECT_SQL = "SELECT * FROM eirvidapp.user";
     private static final String SELECT_BY_EMAIL = "SELECT * FROM eirvidapp.user WHERE email = ?";
-    private static final String INSERT_SQL = "INSERT INTO eirvidapp.user (name, surname, yearbirth, cardnumber, email, password)VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String INSERT_SQL = "INSERT INTO eirvidapp.user (name, surname, yearbirth, cardnumber, email, password, balance)VALUES (?, ?, ?, ?, ?, ?, ?)";
     private static final String UPDATE_SQL = "UPDATE eirvidapp.user  SET name = ?, surname = ?, yearbirth = ?, cardnumber = ?, email = ?, password = ?  WHERE id = ?";    
     private static final String DELETE_SQL = "DELETE FROM eirvidapp.user WHERE id = ?";
     
@@ -48,7 +44,7 @@ public class UserDao {
         user.setCardNumber(cardNumber);
         user.setEmail(email);
         user.setPassword(password);
-        
+        user.setBalance(user.getBalance());
         insertUser(user);
         
     //CRUD methods - Create Read Update Delete
@@ -77,6 +73,7 @@ public class UserDao {
                 String cardNumber= rs.getString("cardnumber");
                 String email= rs.getString("email");
                 String password= rs.getString("password");
+                double balance = rs.getDouble("balance");
 
                 RegularUser user = new RegularUser();
                 user.setId(id);
@@ -86,6 +83,7 @@ public class UserDao {
                 user.setCardNumber(cardNumber);
                 user.setEmail(email);
                 user.setPassword(password);
+                user.setBalance(balance);
                 
                 users.add(user);
                 
@@ -151,6 +149,7 @@ public class UserDao {
             stmt.setString(4,user.getCardNumber() );
             stmt.setString(5,user.getEmail());
             stmt.setString(6,user.getPassword());
+            stmt.setDouble(7,user.getBalance());
         
             int rowsAffected = stmt.executeUpdate();
             
@@ -225,4 +224,3 @@ public class UserDao {
         return success;
 }
 }
-*/
