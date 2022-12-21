@@ -1,8 +1,8 @@
-/*
+
 package dao;
 
+import User.RegularUser;
 import com.mysql.cj.jdbc.Driver;
-import model.User;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -37,22 +37,22 @@ public class UserDao {
         System.out.println("Type the password");
         String password = scanner.next();
         
-        User u = new User();
-        u.setName(name);
-        u.setSurname(surname);
-        u.setYearOfBirth(yearbirth);
-        u.setCardNumber(cardNumber);
-        u.setEmail(email);
-        u.setPassword(password);
+        RegularUser user = new RegularUser();
+        user.setName(name);
+        user.setSurname(surname);
+        user.setYearOfBirth(yearbirth);
+        user.setCardNumber(cardNumber);
+        user.setEmail(email);
+        user.setPassword(password);
         
-        insertUser(u);
+        insertUser(user);
         
     //CRUD methods - Create Read Update Delete
 }
     
-    public static ArrayList<User> searchUsers(){
+    public static ArrayList<RegularUser> searchUsers(){
         
-        ArrayList<User> users = new ArrayList();
+        ArrayList<RegularUser> users = new ArrayList();
         
         //Java DataBase Connection (JDBC)
         try{
@@ -73,17 +73,17 @@ public class UserDao {
                 String cardNumber= rs.getString("cardnumber");
                 String email= rs.getString("email");
                 String password= rs.getString("password");
+
+                RegularUser user = new RegularUser();
+                user.setId(id);
+                user.setName(name);
+                user.setSurname(surname);
+                user.setYearOfBirth(yearbirth);
+                user.setCardNumber(cardNumber);
+                user.setEmail(email);
+                user.setPassword(password);
                 
-                User u = new User();
-                u.setId(id);
-                u.setName(name);
-                u.setSurname(surname);
-                u.setYearOfBirth(yearbirth);
-                u.setCardNumber(cardNumber);
-                u.setEmail(email);
-                u.setPassword(password);
-                
-                users.add(u);
+                users.add(user);
                 
                 
               
@@ -98,9 +98,9 @@ public class UserDao {
         return users;
     } 
     
-    public static User searchUserByEmail(String email){
-        
-        User u = null;
+    public static RegularUser searchUserByEmail(String email){
+
+        RegularUser user = null;
         
         try {
             Driver driver = new Driver();
@@ -119,19 +119,19 @@ public class UserDao {
                 int id = rs.getInt("id");
                 String password = rs.getString("password");
                 
-                u = new User();
-                u.setId(id);
-                u.setEmail(email);
-                u.setPassword(password);
+                user = new RegularUser();
+                user.setId(id);
+                user.setEmail(email);
+                user.setPassword(password);
             }
             
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return u;
+        return user;
     }
 
-    public static boolean insertUser(User u){
+    public static boolean insertUser(RegularUser user){
         boolean success = false;
         try {
             Driver driver = new Driver();
@@ -141,12 +141,12 @@ public class UserDao {
             
             PreparedStatement stmt = c.prepareStatement(INSERT_SQL);       
         
-            stmt.setString(1,u.getName());
-            stmt.setString(2,u.getSurname() );
-            stmt.setString(3,u.getYearOfBirth() );
-            stmt.setString(4,u.getCardNumber() );
-            stmt.setString(5,u.getEmail());
-            stmt.setString(6,u.getPassword());
+            stmt.setString(1,user.getName());
+            stmt.setString(2,user.getSurname() );
+            stmt.setString(3,user.getYearOfBirth() );
+            stmt.setString(4,user.getCardNumber() );
+            stmt.setString(5,user.getEmail());
+            stmt.setString(6,user.getPassword());
         
             int rowsAffected = stmt.executeUpdate();
             
@@ -159,7 +159,7 @@ public class UserDao {
         return success;
         } 
     
-    public static boolean updateUser(User u){
+    public static boolean updateUser(RegularUser user){
        
         boolean success = false;
         
@@ -172,13 +172,13 @@ public class UserDao {
             
             PreparedStatement stmt = c.prepareStatement(UPDATE_SQL);       
         
-            stmt.setString(1,u.getName() );
-            stmt.setString(2,u.getSurname() );
-            stmt.setString(3,u.getYearOfBirth());
-            stmt.setString(4,u.getCardNumber() );
-            stmt.setString(5,u.getEmail() );
-            stmt.setString(6,u.getPassword());
-            stmt.setInt(7,u.getId());
+            stmt.setString(1,user.getName() );
+            stmt.setString(2,user.getSurname() );
+            stmt.setString(3,user.getYearOfBirth());
+            stmt.setString(4,user.getCardNumber() );
+            stmt.setString(5,user.getEmail() );
+            stmt.setString(6,user.getPassword());
+            stmt.setInt(7,user.getId());
             
             int rowsAffected = stmt.executeUpdate();
             
@@ -193,7 +193,7 @@ public class UserDao {
     
 } 
     
-    public static boolean deleteUser(User u){
+    public static boolean deleteUser(RegularUser user){
 
      boolean success = false;
         try {
@@ -205,7 +205,7 @@ public class UserDao {
             
             PreparedStatement stmt = c.prepareStatement(DELETE_SQL);
             
-            stmt.setInt (1, u.getId());
+            stmt.setInt (1, user.getId());
             
             int rowsAffected = stmt.executeUpdate();
             
@@ -221,4 +221,3 @@ public class UserDao {
         return success;
 }
 }
-*/

@@ -1,4 +1,4 @@
-/*package eirvidapp;
+package eirvidapp;
 
 import dao.UserDao;
 import User.User;
@@ -24,4 +24,3 @@ public class Login {
     }
 
 }
-*/

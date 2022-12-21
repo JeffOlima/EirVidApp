@@ -16,10 +16,10 @@ public class RegularUser extends User{
 
 
     public RegularUser(){
-        this(1, "Bekezhan", "Abdykarimov", 1999, 47320, "smth@mail.com", "password");
+        this(1, "Bekezhan", "Abdykarimov", "1999", "42412412312", "smth@mail.com", "password");
     }
 
-    public RegularUser(int id, String name, String surname, int yearOfBirth, int cardNumber, String email, String password) {
+    public RegularUser(int id, String name, String surname, String yearOfBirth, String cardNumber, String email, String password) {
         super(id, name, surname, yearOfBirth, cardNumber, email, password);
         this.rentedMoviesList = new ArrayList<>();
         this.balance = 100.0; //each new user will get 100 credit

@@ -4,9 +4,6 @@
  */
 package User;
 
-import Functionality.FindMovie;
-import Movie.Movie;
-
 /**
  *
  * @author olive
@@ -21,7 +18,7 @@ public abstract class User implements User_Functionality{
     private String email;
     private String password;
 
-    public User(int id, String name, String surname, int yearOfBirth, int cardNumber, String email, String password) {
+    public User(int id, String name, String surname, String yearOfBirth, String cardNumber, String email, String password) {
         this.id = id;
         this.name = name;
         this.surname = surname;

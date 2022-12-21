@@ -1,16 +1,15 @@
-/*package eirvidapp;
+package eirvidapp;
 
 
+import User.User;
 
-//import dao.UserDao;
-import model.User;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 
 public class EirVidApp {
 
-    public static User userLogged = null; 
+    public static User userLogged = null;
     public static Scanner scanner = new Scanner(System.in);
     
     public static void main(String[] args) {
@@ -23,7 +22,7 @@ public class EirVidApp {
             
             //menu + user input 
            Menu menu = new Menu();
-           menu.OutputMenu();
+           menu.StartupOutput();
             String option = scanner.nextLine();
             
             //Process the user input
@@ -158,4 +157,3 @@ public class EirVidApp {
         }
     }
 }
-*/
