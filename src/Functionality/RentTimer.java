@@ -2,15 +2,16 @@ package Functionality;
 
 import Movie.Movie;
 
-import javax.swing.text.html.FormSubmitEvent;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+/**
+ *
+ * @author Bekezhan Abdykarimov ( 2020297 )
+ */
 public class RentTimer {
     boolean rentOver;
 

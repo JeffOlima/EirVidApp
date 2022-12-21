@@ -7,6 +7,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author Bekezhan Abdykarimov ( 2020297 )
+ */
 public class Data_FileReader {
     public List<String> ReadFile(String InputFile) throws FileNotFoundException, IOException {
         BufferedReader myReader = new BufferedReader(new FileReader(InputFile));

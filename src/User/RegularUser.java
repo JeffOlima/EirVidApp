@@ -7,7 +7,10 @@ import Functionality.RentTimer;
 import Movie.Movie;
 
 import java.util.*;
-
+/**
+ *
+ * @author Bekezhan Abdykarimov ( 2020297 )
+ */
 
 public class RegularUser extends User{
 

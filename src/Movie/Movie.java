@@ -4,9 +4,8 @@ import java.time.Instant;
 
 /**
  *
- * @author Bekezhan Abdykarimov
+ * @author Bekezhan Abdykarimov ( 2020297 )
  */
-
 public class Movie {
 
     private String original_language;

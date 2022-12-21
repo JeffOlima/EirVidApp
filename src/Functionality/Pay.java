@@ -3,6 +3,10 @@ package Functionality;
 import Movie.Movie;
 import User.RegularUser;
 
+/**
+ *
+ * @author Bekezhan Abdykarimov ( 2020297 )
+ */
 public class Pay {
 
     public void pay (RegularUser user, Movie movie) {

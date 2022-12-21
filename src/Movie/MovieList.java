@@ -9,6 +9,10 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author Bekezhan Abdykarimov ( 2020297 )
+ */
 
 public class MovieList {
     String inputFile = "Movie_Metadata_Edited.csv";

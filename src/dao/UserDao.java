@@ -1,4 +1,4 @@
-
+/*
 package dao;
 
 import User.RegularUser;
@@ -220,4 +220,4 @@ public class UserDao {
         }
         return success;
 }
-}
+}*/

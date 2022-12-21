@@ -1,5 +1,9 @@
 package Movie.File_Reader;
 
+/**
+ *
+ * @author Bekezhan Abdykarimov ( 2020297 )
+ */
 public class Data_Separator {
     public String[] Seperate(String line) {
 

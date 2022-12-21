@@ -1,7 +1,10 @@
 package Movie.File_Reader;
 
 import Movie.Movie;
-
+/**
+ *
+ * @author Bekezhan Abdykarimov ( 2020297 )
+ */
 public class Data_Mapper {
 
     public Movie Map(String[] fields) {

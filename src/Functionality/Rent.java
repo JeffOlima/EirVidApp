@@ -2,8 +2,12 @@ package Functionality;
 
 import Movie.Movie;
 
-import java.time.Instant;
-import java.util.*;
+import java.util.List;
+
+/**
+ *
+ * @author Bekezhan Abdykarimov ( 2020297 )
+ */
 
 public class Rent {
 

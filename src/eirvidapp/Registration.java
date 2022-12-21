@@ -1,3 +1,4 @@
+/*
 package eirvidapp;
 
 import User.RegularUser;
@@ -27,4 +28,4 @@ public class Registration {
 
         return user;
     }
-}
+}*/
