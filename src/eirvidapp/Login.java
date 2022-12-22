@@ -2,27 +2,47 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 package eirvidapp;
 
 import dao.UserDao;
 import User.RegularUser;
+import static eirvidapp.EirVidApp.HomePage;
+import java.util.Scanner;
 
 public class Login {
-    public boolean Log_IN(String email, String password){
+     
+    
+    public void Sign_In() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("===== LOGIN =====");
+        System.out.println("Type the email");
+        String email = scanner.nextLine();
+        System.out.println("Type the password");
+        String password = scanner.nextLine();
+
+        Log_IN(email, password);
+        if (Log_IN(email, password)) {
+            // userLogged = u;
+            MenuOutput menu = new MenuOutput();
+            menu.HomePageOutput();
+        }
+    }
+
+    private boolean Log_IN(String email, String password) {
 
         RegularUser u = UserDao.searchUserByEmail(email);
 
         boolean successLogin = false;
 
-        if (u != null && u.getPassword().equals(password)){
+        if (u != null && u.getPassword().equals(password)) {
             successLogin = true;
         }
 //
-        if (successLogin){
+        if (successLogin) {
             System.out.println("-----> YOU LOGGED IN");
             return true;
-        } else{
+        } else {
             System.out.println("-----> Email/password incorrect");
             return false;
         }
