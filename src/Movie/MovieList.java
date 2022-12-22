@@ -17,22 +17,27 @@ import java.util.List;
  *
  * @author Bekezhan Abdykarimov ( 2020297 )
  */
-
 public class MovieList {
+
     String inputFile = "Movie_Metadata_Edited.csv";
     private List<Movie> movies;
 
-    public MovieList() throws IOException {
+    public MovieList() {
         movies = createMovieList();
     }
 
-    public List<Movie> createMovieList() throws IOException {
+    public List<Movie> createMovieList() {
 
         Data_Parser dataParser = new Data_Parser();
         Data_Separator ds = new Data_Separator();
         Data_FileReader dataFileReader = new Data_FileReader();
-        List<String> lines = dataFileReader.ReadFile(inputFile);
-        movies = dataParser.ParseData(lines);
+        try {
+            List<String> lines = dataFileReader.ReadFile(inputFile);
+            movies = dataParser.ParseData(lines);
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+
         return movies;
     }
 
@@ -41,11 +46,11 @@ public class MovieList {
         Instant currentTime = Instant.now();
         List<Movie> rentedMovies = new ArrayList<>();
         // Check if the last rented time is within the last 5 minutes (300 / 60 = 5)
-        for(int i = 0; i < movies.size(); i++) {
+        for (int i = 0; i < movies.size(); i++) {
 
             if (currentTime.isBefore(movies.get(i).getLastRentedTime().plusSeconds(300))) {
                 // adds the Movie if the last rented time is within the last 5 minutes
-                 rentedMovies.add(movies.get(i));
+                rentedMovies.add(movies.get(i));
             } else {
                 // Returns an empty arraylist if the last rented time is not within the last 5 minutes
                 return rentedMovies;
@@ -54,14 +59,14 @@ public class MovieList {
         return rentedMovies;
     }
 
-    public void showTheMostRentedMovies(){
+    public void showTheMostRentedMovies() {
 
         List<Movie> rentedMovies = getMovieThatWereRentedInLastFiveMinutes();
         System.out.println("The Most Popular movies, that were rented 5 minutes ago: \n");
-        for(int i = 0; i < rentedMovies.size(); i++) {
-            System.out.println("The Movie :" + rentedMovies.get(i).getTitle() + " , was rented: " + rentedMovies.get(i).getRentCount() + "" +
-                    " in the last 5 minutes \n " +
-                    "Last rented time : " + rentedMovies.get(i).getLastRentedTime() );
+        for (int i = 0; i < rentedMovies.size(); i++) {
+            System.out.println("The Movie :" + rentedMovies.get(i).getTitle() + " , was rented: " + rentedMovies.get(i).getRentCount() + ""
+                    + " in the last 5 minutes \n "
+                    + "Last rented time : " + rentedMovies.get(i).getLastRentedTime());
         }
     }
 

@@ -25,34 +25,34 @@ public class UserDao {
     private static final String UPDATE_SQL = "UPDATE eirvidapp.user  SET name = ?, surname = ?, yearbirth = ?, cardnumber = ?, email = ?, password = ?  WHERE id = ?";    
     private static final String DELETE_SQL = "DELETE FROM eirvidapp.user WHERE id = ?";
     
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.println("Type the name");
-        String name = scanner.nextLine();
-        System.out.println("Type the surname");
-        String surname = scanner.nextLine();
-        System.out.println("Type Year of birth");
-        String yearbirth = scanner.nextLine();
-        System.out.println("Type Card number");
-        String cardNumber = scanner.nextLine();
-        System.out.println("Type the email");
-        String email = scanner.next();
-        System.out.println("Type the password");
-        String password = scanner.next();
-        
-        RegularUser user = new RegularUser();
-        user.setName(name);
-        user.setSurname(surname);
-        user.setYearOfBirth(yearbirth);
-        user.setCardNumber(cardNumber);
-        user.setEmail(email);
-        user.setPassword(password);
-        
-        insertUser(user);
-        
-    //CRUD methods - Create Read Update Delete
-}
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        
+//        System.out.println("Type the name");
+//        String name = scanner.nextLine();
+//        System.out.println("Type the surname");
+//        String surname = scanner.nextLine();
+//        System.out.println("Type Year of birth");
+//        String yearbirth = scanner.nextLine();
+//        System.out.println("Type Card number");
+//        String cardNumber = scanner.nextLine();
+//        System.out.println("Type the email");
+//        String email = scanner.next();
+//        System.out.println("Type the password");
+//        String password = scanner.next();
+//        
+//        RegularUser user = new RegularUser();
+//        user.setName(name);
+//        user.setSurname(surname);
+//        user.setYearOfBirth(yearbirth);
+//        user.setCardNumber(cardNumber);
+//        user.setEmail(email);
+//        user.setPassword(password);
+//        
+//        insertUser(user);
+//        
+//    //CRUD methods - Create Read Update Delete
+//}
     
     public static ArrayList<RegularUser> searchUsers(){
         

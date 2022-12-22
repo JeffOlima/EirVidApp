@@ -4,14 +4,18 @@
  */
 package eirvidapp;
 
+import Movie.Movie;
+import Movie.MovieList;
 import User.RegularUser;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class EirVidApp {
 
     public static RegularUser userLogged = null;
     public static Scanner scanner = new Scanner(System.in);
+    private static final List<Movie> movies = new MovieList().createMovieList();
 
     public static void main(String[] args) {
 
@@ -29,7 +33,7 @@ public class EirVidApp {
             switch (option) {
                 case "1": {
                     Registration registration = new Registration();
-                    registration.Registration();
+                    userLogged = registration.Registration();
                     break;
                 }
                 case "2": {
@@ -62,12 +66,15 @@ public class EirVidApp {
 
             switch (option) {
                 case "1": {
+                    userLogged.findMovie(movies);
                     break;
                 }
                 case "2": {
+                    userLogged.rentMovie(movies);
                     break;
                 }
                 case "3": {
+                    
                     break;
                 }
                 case "4": {
