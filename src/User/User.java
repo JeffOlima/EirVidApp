@@ -17,8 +17,9 @@ public abstract class User implements User_Functionality{
     private String cardNumber;
     private String email;
     private String password;
+    private double balance;
 
-    public User(int id, String name, String surname, String yearOfBirth, String cardNumber, String email, String password) {
+    public User(int id, String name, String surname, String yearOfBirth, String cardNumber, String email, String password, double balance) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -26,6 +27,15 @@ public abstract class User implements User_Functionality{
         this.cardNumber = cardNumber;
         this.email = email;
         this.password = password;
+        this.balance = balance;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     public int getId() {

@@ -8,8 +8,6 @@ import java.util.Scanner;
 
 public class MenuOutput {
 
-    //Scanner object to get input from the terminal
-    private static final Scanner scanner = new Scanner(System.in);
 
     /**
      * Shows main menu options

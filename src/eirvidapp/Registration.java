@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package eirvidapp;
-
+/*
 import User.RegularUser;
 import dao.UserDao;
 import java.util.Scanner;
@@ -13,6 +13,7 @@ public class Registration {
     public RegularUser Registration() {
 
         String name, surname, yearofbirth, cardNumber, email, password;
+        double balance;
 
         Scanner scanner = new Scanner(System.in);
 
@@ -75,13 +76,23 @@ public class Registration {
                 System.out.println("Password is invalid. Please enter a valid password (Must be more than 8 characters).");
             }
         } while (true);
+        
+        /*do {
+            System.out.println("Please enter your password (Must be more than 8 characters):");
+            balance = scanner.nextDouble();
+            if (balance.matches("[0-9]")) {
+                break;
+            } else {
+                System.out.println("Password is invalid. Please enter a valid password (Must be more than 8 characters).");
+            }
+        } while (true);
 
-       return  CreateNewUser(name, surname, yearofbirth, cardNumber, email, password);
+       return  CreateNewUser(name, surname, yearofbirth, cardNumber, email, password, balance);
 
     }
     //After Registration() we call this method to insert the user into the database 
 
-    private RegularUser CreateNewUser(String name, String surname, String yearofbirth, String cardNumber, String email, String password) {
+    private RegularUser CreateNewUser(String name, String surname, String yearofbirth, String cardNumber, String email, String password, double balance) {
         RegularUser user = new RegularUser();
 
         user.setName(name);
@@ -90,6 +101,7 @@ public class Registration {
         user.setCardNumber(cardNumber);
         user.setEmail(email);
         user.setPassword(password);
+        user.setBalance(balance);
 
         boolean registered = UserDao.insertUser(user);
 
@@ -101,4 +113,4 @@ public class Registration {
 
         return user;
     }
-}
+}*/

@@ -6,7 +6,6 @@ package eirvidapp;
 
 import dao.UserDao;
 import User.RegularUser;
-import static eirvidapp.EirVidApp.HomePage;
 import java.util.Scanner;
 
 public class Login {
@@ -47,5 +46,6 @@ public class Login {
             return false;
         }
     }
+    
 
 }

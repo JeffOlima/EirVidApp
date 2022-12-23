@@ -77,6 +77,7 @@ public class UserDao {
                 String cardNumber= rs.getString("cardnumber");
                 String email= rs.getString("email");
                 String password= rs.getString("password");
+                double balance = rs.getDouble("balance");
 
                 RegularUser user = new RegularUser();
                 user.setId(id);
@@ -86,6 +87,7 @@ public class UserDao {
                 user.setCardNumber(cardNumber);
                 user.setEmail(email);
                 user.setPassword(password);
+                user.setBalance(balance);
                 
                 users.add(user);
                 

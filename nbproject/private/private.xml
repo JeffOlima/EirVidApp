@@ -3,27 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/OOP/EirVidApp/src/Functionality/Remove.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/User/User.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/User/User_Functionality.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/dao/UserDao.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/Functionality/FindMovie.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/Movie/MovieList.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/Functionality/Rent.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/eirvidapp/EirVidApp.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/Movie/File_Reader/Data_Mapper.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/Functionality/GetUserInput.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/eirvidapp/Login.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/eirvidapp/Menu.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/eirvidapp/OutputHomePage.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/Functionality/RentTimer.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/Movie/File_Reader/Data_FileReader.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/eirvidapp/Registration.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/User/RegularUser.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/Movie/Movie.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/Movie/File_Reader/Data_Parser.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/Movie/File_Reader/Data_Separator.java</file>
-            <file>file:/D:/OOP/EirVidApp/src/Functionality/Pay.java</file>
+            <file>file:/C:/Users/Admin/Desktop/Algorithms%20Architecture/old/EirVidApp/src/User/User_Functionality.java</file>
+            <file>file:/C:/Users/Admin/Desktop/Algorithms%20Architecture/old/EirVidApp/src/eirvidapp/Login.java</file>
+            <file>file:/C:/Users/Admin/Desktop/Algorithms%20Architecture/old/EirVidApp/src/Functionality/Pay.java</file>
+            <file>file:/C:/Users/Admin/Desktop/Algorithms%20Architecture/old/EirVidApp/src/User/User.java</file>
+            <file>file:/C:/Users/Admin/Desktop/Algorithms%20Architecture/old/EirVidApp/src/dao/UserDao.java</file>
+            <file>file:/C:/Users/Admin/Desktop/Algorithms%20Architecture/old/EirVidApp/src/Movie/File_Reader/Data_FileReader.java</file>
+            <file>file:/C:/Users/Admin/Desktop/Algorithms%20Architecture/old/EirVidApp/src/Functionality/Rent.java</file>
+            <file>file:/C:/Users/Admin/Desktop/Algorithms%20Architecture/old/EirVidApp/src/Movie/Movie.java</file>
+            <file>file:/C:/Users/Admin/Desktop/Algorithms%20Architecture/old/EirVidApp/src/Movie/MovieList.java</file>
+            <file>file:/C:/Users/Admin/Desktop/Algorithms%20Architecture/old/EirVidApp/src/eirvidapp/Registration.java</file>
+            <file>file:/C:/Users/Admin/Desktop/Algorithms%20Architecture/old/EirVidApp/src/eirvidapp/EirVidApp.java</file>
+            <file>file:/C:/Users/Admin/Desktop/Algorithms%20Architecture/old/EirVidApp/src/Movie/File_Reader/Data_Mapper.java</file>
+            <file>file:/C:/Users/Admin/Desktop/Algorithms%20Architecture/old/EirVidApp/src/eirvidapp/MenuOutput.java</file>
+            <file>file:/C:/Users/Admin/Desktop/Algorithms%20Architecture/old/EirVidApp/src/User/RegularUser.java</file>
+            <file>file:/C:/Users/Admin/Desktop/Algorithms%20Architecture/old/EirVidApp/src/Movie/File_Reader/Data_Separator.java</file>
         </group>
     </open-files>
 </project-private>

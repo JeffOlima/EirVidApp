@@ -17,7 +17,7 @@ public class Rent {
 
     public List<Movie> rentMovie(List<Movie> userRentedMovies, Movie movie){
         userRentedMovies.add(movie);
-        movie.rented();
+        //movie.rented();
         return userRentedMovies;
     }
 }

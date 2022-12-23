@@ -14,6 +14,7 @@ import User.RegularUser;
 public class Pay {
 
     public void pay (RegularUser user, Movie movie) {
+        
         double userBalance = user.getBalance();
         double movieRentPrice = movie.getPrice();
 
