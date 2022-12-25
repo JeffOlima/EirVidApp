@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Admin
+ * @author Jefferson de Oliveira Lima 2020373
  */
 public class MenuOptions {
 
