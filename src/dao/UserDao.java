@@ -4,6 +4,11 @@
  */
 package dao;
 
+/**
+ *
+ * @author Jefferson de Oliveira Lima 2020373
+ */
+
 import User.RegularUser;
 import com.mysql.cj.jdbc.Driver;
 
