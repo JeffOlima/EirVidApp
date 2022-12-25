@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package eirvidapp;
-/*
+
 import User.RegularUser;
 import dao.UserDao;
 import java.util.Scanner;
@@ -77,15 +77,10 @@ public class Registration {
             }
         } while (true);
         
-        /*do {
-            System.out.println("Please enter your password (Must be more than 8 characters):");
-            balance = scanner.nextDouble();
-            if (balance.matches("[0-9]")) {
-                break;
-            } else {
-                System.out.println("Password is invalid. Please enter a valid password (Must be more than 8 characters).");
-            }
-        } while (true);
+       
+            System.out.println("Since it is a prototype, u get 200.00 cretits on your account");
+            balance = 200.00;
+            
 
        return  CreateNewUser(name, surname, yearofbirth, cardNumber, email, password, balance);
 
@@ -113,4 +108,4 @@ public class Registration {
 
         return user;
     }
-}*/
+}

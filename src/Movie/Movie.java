@@ -58,6 +58,11 @@ public class Movie {
         this.lastRentedTime = lastRentedTime;
 
     }
+    public void showShortInfo() {
+        System.out.println("*) Original Title: " + getOriginal_title());
+        System.out.println("*) Price: " + getPrice());
+    }
+    
     public void getMovie(){
         System.out.println("original_language: " + getOriginal_language());
         System.out.println("original_title: " + getOriginal_title() );

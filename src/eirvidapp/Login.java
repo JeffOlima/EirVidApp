@@ -11,7 +11,8 @@ import java.util.Scanner;
 public class Login {
      
     
-    public void Sign_In() {
+    public RegularUser Sign_In() {
+        
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("===== LOGIN =====");
@@ -20,11 +21,15 @@ public class Login {
         System.out.println("Type the password");
         String password = scanner.nextLine();
 
-        Log_IN(email, password);
-        if (Log_IN(email, password)) {
+        //Log_IN(email, password);
+        if (Log_IN(email, password) == false) {
             // userLogged = u;
-            MenuOutput menu = new MenuOutput();
-            menu.HomePageOutput();
+            return Sign_In();
+            
+        }else{
+            System.out.println("works.....");
+            RegularUser userLogged = GetUser(email);
+            return userLogged;
         }
     }
 
@@ -40,11 +45,16 @@ public class Login {
 //
         if (successLogin) {
             System.out.println("-----> YOU LOGGED IN");
-            return true;
+            return successLogin;
         } else {
             System.out.println("-----> Email/password incorrect");
-            return false;
+            return successLogin;
         }
+    }
+    
+    private RegularUser GetUser(String email){
+        RegularUser u = UserDao.searchUserByEmail(email);
+        return u;
     }
     
 

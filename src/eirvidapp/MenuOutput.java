@@ -26,9 +26,12 @@ public class MenuOutput {
     public void HomePageOutput() {
         System.out.println("===== HOME PAGE =====");  
         System.out.println("SELECT AN OPTION");
-        System.out.println("[1] Rent a movie ");
-        System.out.println("[2] Find a movie");
+        System.out.println("[1] Find a movie ");
+        System.out.println("[2] Rent a movie");
         System.out.println("[3] See recomendations");
-        System.out.println("[4] Logout");
+        System.out.println("[4] Show current balance");
+        System.out.println("[5] Show rented movies");
+        System.out.println("[6] Logout "
+                + "\n");
     }
 }

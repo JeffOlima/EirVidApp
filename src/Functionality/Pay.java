@@ -6,6 +6,7 @@ package Functionality;
 
 import Movie.Movie;
 import User.RegularUser;
+import dao.UserDao;
 
 /**
  *
@@ -13,16 +14,20 @@ import User.RegularUser;
  */
 public class Pay {
 
-    public void pay (RegularUser user, Movie movie) {
-        
+    public void pay(RegularUser user, Movie movie) {
+
         double userBalance = user.getBalance();
         double movieRentPrice = movie.getPrice();
 
-        if(userBalance < movieRentPrice) {
+        if (userBalance < movieRentPrice) {
             System.out.println("Not enough balance, please add some credits");
-        }else{
+        } else {
             user.setBalance(userBalance - movieRentPrice);
+            double newBalance = user.getBalance();
+            UserDao db = new UserDao();
+            boolean updateBalance = db.updateUsersBalance(user, newBalance);
             System.out.println("Payment approved");
+            System.out.println("new Balance : " + newBalance);
         }
     }
 }

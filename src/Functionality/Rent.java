@@ -17,7 +17,11 @@ public class Rent {
 
     public List<Movie> rentMovie(List<Movie> userRentedMovies, Movie movie){
         userRentedMovies.add(movie);
-        //movie.rented();
+        //by calling this method we are increasing rented variable and updating the last rent time
+        movie.rented();
+        System.out.println("The movie " + movie.getTitle() + " was successfully added to your collection \n");
+        // outputs the movie we just rented
+        movie.getMovie(); 
         return userRentedMovies;
     }
 }
