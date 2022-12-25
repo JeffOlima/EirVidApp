@@ -6,7 +6,7 @@ package User;
 
 /**
  *
- * @author olive
+ * @author Jefferson de Oliveira Lima 2020373
  */
 public abstract class User implements User_Functionality{
     
