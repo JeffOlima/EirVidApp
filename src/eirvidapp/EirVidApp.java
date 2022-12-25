@@ -4,6 +4,11 @@
  */
 package eirvidapp;
 
+/**
+ *
+ * @author Jefferson de Oliveira Lima 2020373
+ */
+
 import User.RegularUser;
 
 public class EirVidApp {
