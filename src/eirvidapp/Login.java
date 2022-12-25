@@ -4,6 +4,11 @@
  */
 package eirvidapp;
 
+/**
+ *
+ * @author Jefferson de Oliveira Lima 2020373
+ */
+
 import dao.UserDao;
 import User.RegularUser;
 import java.util.Scanner;
