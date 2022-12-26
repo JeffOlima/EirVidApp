@@ -12,7 +12,6 @@ import Functionality.RentTimer;
 import Movie.Movie;
 import Movie.MovieList;
 import Movie.Movie_GetRandomSomeMovies;
-import eirvidapp.MenuOptions;
 
 import java.util.*;
 
@@ -34,11 +33,19 @@ public class RegularUser extends User {
         this.rentedMoviesList = new ArrayList<>();
     }
 
+    @Override
     public void showRentedMovies() {
-        for (int i = 0; i < rentedMoviesList.size(); i++) {
-            System.out.println("Movie " + i);
-            rentedMoviesList.get(i).showShortInfo();
-            System.out.println("\n");
+        // check if the list is empty or not
+        // using isEmpty() function
+        boolean ans = rentedMoviesList.isEmpty();
+        if (ans == true) {
+            System.out.println("The List is empty \n");
+        } else {
+            for (int i = 0; i < rentedMoviesList.size(); i++) {
+                System.out.println("Movie " + i);
+                rentedMoviesList.get(i).showShortInfo();
+                System.out.println("\n");
+            }
         }
     }
 
@@ -56,10 +63,8 @@ public class RegularUser extends User {
             System.out.println("Movie " + movieName + " not found \n");
             return null;
         } else {
-            //   isFound = true;
+           
             System.out.println("Movie " + movieName + " is in the catalog. \n");
-            //  MenuOptions homePage = new MenuOptions();
-            // homePage.HomePage();
             return foundMovie;
         }
     }
@@ -118,20 +123,18 @@ public class RegularUser extends User {
                 break;
             default:
                 System.out.println("Smth went wrong");
-               break;
+                break;
         }
-        //Outputs the homePage after renting is over
-      //  MenuOptions homePage = new MenuOptions();
-        //homePage.HomePage();
     }
 
-    private int showRentTimeOptions(Movie movie) {
+    @Override
+    public int showRentTimeOptions(Movie movie) {
         GetUserInput userInput = new GetUserInput();
         System.out.println("Choose the rent duration: \n"
                 + "1) 1 minute (free) \n"
                 + "2) 5 minutes (free)\n"
                 + "3) 1 hour (free)\n"
-                + "4) 1 day (Movie: " + movie.getOriginal_title() + " 1 day rental price: " + movie.getPrice());
+                + "4) 1 day (Movie: " + movie.getOriginal_title() + " 1 day rental price: " + movie.getPrice() + ")");
         int input = userInput.getInput();
         int rentTime = -1;  // will be shown in seconds
         switch (input) {
@@ -153,8 +156,12 @@ public class RegularUser extends User {
                 return showRentTimeOptions(movie);
         }
     }
-
-    private boolean pay(Movie movie) {
+    /*
+    This is a method in Java that allows a user to pay for a movie rental.
+    The method takes a movie object as an argument 
+    */
+    @Override
+    public boolean pay(Movie movie) {
 
         Pay MovieRent = new Pay();
         GetUserInput userInput = new GetUserInput();

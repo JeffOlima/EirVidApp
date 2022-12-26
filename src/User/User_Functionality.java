@@ -15,4 +15,7 @@ import java.util.List;
 public interface User_Functionality {
     public Movie findMovie();
     public void rentMovie();
+    public void showRentedMovies();
+    public int showRentTimeOptions(Movie movie);
+    public boolean pay(Movie movie);
 }

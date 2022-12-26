@@ -9,12 +9,20 @@ package Movie.File_Reader;
  * @author Bekezhan Abdykarimov ( 2020297 )
  */
 public class Data_Separator {
-    public String[] Seperate(String line) {
+
+    /*
+    This method takes a single string input called line and 
+    separates it into an array of strings using a regular expression 
+    as the delimiter.
+     */
+    public String[] seperate(String line) {
 
         //   String regex = "\"";
         String regex = ",(?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)";
 
         return line.split(regex);
+
+        //returns the resulting array of strings that have been split 
     }
 
 }

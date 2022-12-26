@@ -9,6 +9,7 @@ import java.time.Instant;
 /**
  *
  * @author Bekezhan Abdykarimov ( 2020297 )
+ 
  */
 public class Movie {
 

@@ -104,7 +104,7 @@ public class MenuOptions {
                     if(userLogged == null){
                         System.out.println("null");
                     }
-                    System.out.println(userLogged.getName() + " your current balance: " + userLogged.getBalance());
+                    System.out.println(userLogged.getName() + " your current balance: " + userLogged.getBalance() +" \n");
                     HomePage();
                     
                     break;

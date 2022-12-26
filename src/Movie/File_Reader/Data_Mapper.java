@@ -5,30 +5,31 @@
 package Movie.File_Reader;
 
 import Movie.Movie;
+
 /**
  *
  * @author Bekezhan Abdykarimov ( 2020297 )
  */
 public class Data_Mapper {
 
-    public Movie Map(String[] fields) {
+    /*
+    Java class called Data_Mapper that has a method called map(). 
+    This method takes an array of strings called fields and uses it to create 
+    and return a new Movie object.
+     */
+    public Movie map(String[] fields) {
+
         String original_language = fields[0];
         String original_title = fields[1];
         String overview = fields[2];
-        double popularity = -1.0;
-        try {
-            popularity = Double.parseDouble(fields[3]);
-        }
-        catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println(original_title);
-        }
+        double popularity = Double.parseDouble(fields[3]);
         String release_date = fields[4];
         double runtime = Double.parseDouble(fields[5]);
         String tagline = fields[6];
         String title = fields[7];
-        double vote_average = Double.parseDouble(fields[8]);;
-        double vote_count = Double.parseDouble(fields[9]);;
-        double price = Double.parseDouble(fields[10]);;
+        double vote_average = Double.parseDouble(fields[8]);
+        double vote_count = Double.parseDouble(fields[9]);
+        double price = Double.parseDouble(fields[10]);
 
         return new Movie(
                 original_language,
