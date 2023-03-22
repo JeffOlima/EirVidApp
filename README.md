@@ -1,5 +1,6 @@
 # EirVidApp
 Movie rental system 
+
 Following the success of YouTube Movies, RTÉ is seeking to add movie rental functionality, ÉirVid, to its
 video streaming service, RTÉ Player. RTÉ has signed a contract with your team to design and write a
 prototype of this service. You will be combining skills from two of the classes that you have this
