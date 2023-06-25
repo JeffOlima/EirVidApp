@@ -5,3 +5,5 @@ Bekezhan, during his third year of college, took charge of creating an analytica
 Jefferson, also during the third year of college, was responsible for designing the Class Diagram for the Movie Rental System. He defined the User Object, which could be logged in using the Login Method, and created methods such as Pay, Remove, Rent, RentTimer, and FindMovie to facilitate movie rentals and account management. Jefferson also worked on the Movie Object, implementing methods like MovieList and GetUserInput to enable browsing and selection of movies, as well as entering payment information.
 
 Together, Bekezhan and Jefferson collaborated on this project, which served as their final assignment during the first semester of the third year of college. They successfully built a comprehensive movie rental system that allows users to browse, rent, and manage movies with ease.
+
+YOU CAN FIND OUT MORE ABOUT THIS PROJECT HERE: https://github.com/JeffOlima/EirVidApp/blob/main/EirVid%20Project.pdf 
